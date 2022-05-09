@@ -46,6 +46,6 @@ class PsychologistsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def psychologist_params
-      params.fetch(:psychologist, {})
+      params.require(:psychologist).permit(:name, :gender, :email, :area_of_specialty, :image)
     end
 end
