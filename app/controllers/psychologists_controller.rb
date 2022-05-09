@@ -1,5 +1,5 @@
 class PsychologistsController < ApplicationController
-  before_action :set_psychologist, only: %i[ show update destroy ]
+  before_action :set_psychologist, only: %i[show update destroy]
 
   # GET /psychologists
   def index
@@ -39,13 +39,14 @@ class PsychologistsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_psychologist
-      @psychologist = Psychologist.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def psychologist_params
-      params.require(:psychologist).permit(:name, :gender, :email, :area_of_specialty, :image)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_psychologist
+    @psychologist = Psychologist.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def psychologist_params
+    params.require(:psychologist).permit(:name, :gender, :email, :area_of_specialty, :image)
+  end
 end
