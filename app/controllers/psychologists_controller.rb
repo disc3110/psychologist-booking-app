@@ -1,5 +1,6 @@
 class PsychologistsController < ApplicationController
   before_action :set_psychologist, only: %i[show update destroy]
+  before_action :authenticate_request!, only: %i[create update destroy]
 
   # GET /psychologists
   def index
